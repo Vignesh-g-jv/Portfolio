@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio of Vignesh - Java Backend Developer specializing in Spring Boot, REST APIs, MySQL, and Hibernate. Based in Chennai, India.">
+    <meta name="keywords" content="Vignesh, Java Developer, Backend Developer, Spring Boot, Java Backend, Chennai Developer, Java Portfolio, REST APIs, Hibernate, MySQL">
+    <meta name="author" content="Vignesh">
+    <title>Vignesh | Java Backend Developer Portfolio</title>
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Vignesh | Java Backend Developer">
+    <meta property="og:description" content="Java Backend Developer specializing in Spring Boot, REST APIs, MySQL, and Hibernate. Check out my projects and skills.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vignesh-backend.dev">
+    
+    <!-- Google Fonts: Poppins (for Headings) & Inter (for Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Grid Effect -->
+    <div class="bg-grid-overlay"></div>
+    <div class="bg-radial-glow"></div>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#hero" class="logo">
+                <span class="logo-accent">&lt;</span>Vignesh<span class="logo-accent"> /&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-toggle" class="mobile-toggle-btn" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section section-padding-large">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-container">
+                        <span class="badge"><i class="fa-solid fa-code"></i> Java Developer</span>
+                    </div>
+                    <h1 class="hero-title animate-reveal">
+                        Hi, I'm <span class="text-gradient">Vignesh</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        <span class="typing-container">
+                            <span id="typed-role"></span><span class="typed-cursor">|</span>
+                        </span>
+                    </h2>
+                    <p class="hero-description animate-reveal delay-1">
+                        I am a Java Backend Developer passionate about building scalable backend applications using Java, Spring Boot, Hibernate, and MySQL. I enjoy solving real-world problems through clean, efficient, and maintainable code.
+                    </p>
+                    <div class="hero-actions animate-reveal delay-2">
+                        <a href="resume-vignesh-impo.pdf" download="resume-vignesh-impo.pdf" class="btn btn-primary" id="btn-resume">
+                            <i class="fa-solid fa-download"></i> Download Resume
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fa-solid fa-envelope"></i> Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="cube-container">
+                        <div class="glass-cube">
+                            <div class="cube-face face-front"><i class="fa-brands fa-java text-gradient"></i></div>
+                            <div class="cube-face face-back"><i class="fa-solid fa-database text-gradient"></i></div>
+                            <div class="cube-face face-left"><i class="fa-solid fa-server text-gradient"></i></div>
+                            <div class="cube-face face-right"><i class="fa-solid fa-cloud text-gradient"></i></div>
+                            <div class="cube-face face-top"><i class="fa-brands fa-envira text-gradient"></i></div>
+                            <div class="cube-face face-bottom"><i class="fa-solid fa-gears text-gradient"></i></div>
+                        </div>
+                        <div class="cube-shadow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">About Me</span>
+                    <h2 class="section-title">My Journey & Passion</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="about-para">
+                            Hello! I am a software engineer focused on building robust backend systems. My core expertise is in design and development of server-side logic using <strong class="text-highlight">Java</strong> and the <strong class="text-highlight">Spring Boot</strong> ecosystem. I find great satisfaction in transforming complex business problems into clear, decoupled, and efficient database architectures and REST APIs.
+                        </p>
+                        <p class="about-para">
+                            My journey began with a strong interest in understanding how systems work under the hood. This drove me to focus on core concepts like object-oriented programming (OOP), collections, threads, and databases. I believe that writing good code requires attention to detail, strong logic, and continuous learning to stay updated with modern tools and techniques.
+                        </p>
+                        <div class="about-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check bullet-icon"></i>
+                                <span><strong>Backend Focus:</strong> Building clean, scalable microservices and RESTful Web APIs.</span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check bullet-icon"></i>
+                                <span><strong>Database Design:</strong> Crafting optimal entity relationships and SQL query optimization.</span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check bullet-icon"></i>
+                                <span><strong>Problem Solver:</strong> Designing clean code adhering to OOP principles and SOLID architecture.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-stats-container">
+                        <div class="glass-card stat-card">
+                            <div class="stat-icon-wrapper">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <h3>Location</h3>
+                            <p>Chennai, India</p>
+                        </div>
+                        <div class="glass-card stat-card">
+                            <div class="stat-icon-wrapper">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h3>Core Focus</h3>
+                            <p>Spring Boot & APIs</p>
+                        </div>
+                        <div class="glass-card stat-card">
+                            <div class="stat-icon-wrapper">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h3>Education</h3>
+                            <p>B.E. Computer Science</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Skills</span>
+                    <h2 class="section-title">My Tech Stack & Expertise</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="skills-tabs-container">
+                    <div class="skills-grid-categories">
+                        <!-- Category: Programming & Backend -->
+                        <div class="glass-card skill-category-card">
+                            <h3 class="category-title"><i class="fa-solid fa-code"></i> Languages & Backend</h3>
+                            <div class="skills-list">
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Java</span>
+                                        <span class="skill-percentage">90%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill" data-progress="90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Spring Boot</span>
+                                        <span class="skill-percentage">85%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill" data-progress="85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Spring MVC</span>
+                                        <span class="skill-percentage">80%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill" data-progress="80%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Hibernate / JPA</span>
+                                        <span class="skill-percentage">85%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill" data-progress="85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">REST APIs</span>
+                                        <span class="skill-percentage">90%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill" data-progress="90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">SQL / MySQL</span>
+                                        <span class="skill-percentage">85%</span>
+                                    </div>
+                                    <div class="skill-bar-bg">
+                                        <div class="skill-bar-fill" data-progress="85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category: Concepts & Fundamentals -->
+                        <div class="glass-card skill-category-card">
+                            <h3 class="category-title"><i class="fa-solid fa-brain"></i> Core Concepts</h3>
+                            <div class="concepts-grid">
+                                <div class="concept-tag" data-tooltip="Object-Oriented Programming principles: Polymorphism, Inheritance, Encapsulation, Abstraction"><i class="fa-solid fa-shapes"></i> OOP</div>
+                                <div class="concept-tag" data-tooltip="Java Collections Framework: List, Set, Map, Collections utility classes"><i class="fa-solid fa-layer-group"></i> Collections</div>
+                                <div class="concept-tag" data-tooltip="Robust error mitigation: Try-Catch blocks, custom Exception types, Global Handling"><i class="fa-solid fa-triangle-exclamation"></i> Exception Handling</div>
+                                <div class="concept-tag" data-tooltip="Java Database Connectivity: establishing database links, executing queries"><i class="fa-solid fa-plug"></i> JDBC</div>
+                                <div class="concept-tag" data-tooltip="Java Persistence API: Object-Relational Mapping declarations and configurations"><i class="fa-solid fa-database"></i> JPA</div>
+                                <div class="concept-tag" data-tooltip="Model-View-Controller design pattern separation of concerns"><i class="fa-solid fa-sitemap"></i> MVC Architecture</div>
+                                <div class="concept-tag" data-tooltip="Create, Read, Update, Delete operational database controllers"><i class="fa-solid fa-arrows-spin"></i> CRUD Operations</div>
+                            </div>
+                        </div>
+
+                        <!-- Category: Tools & Technologies -->
+                        <div class="glass-card skill-category-card">
+                            <h3 class="category-title"><i class="fa-solid fa-toolbox"></i> Tools & Environment</h3>
+                            <div class="tools-flex">
+                                <div class="tool-pill"><i class="fa-brands fa-git-alt"></i> Git</div>
+                                <div class="tool-pill"><i class="fa-brands fa-github"></i> GitHub</div>
+                                <div class="tool-pill"><i class="fa-solid fa-box-open"></i> Maven</div>
+                                <div class="tool-pill"><i class="fa-solid fa-rocket"></i> Postman</div>
+                                <div class="tool-pill"><i class="fa-solid fa-circle-dot"></i> Eclipse IDE</div>
+                                <div class="tool-pill"><i class="fa-solid fa-code-compare"></i> VS Code</div>
+                                <div class="tool-pill"><i class="fa-brands fa-js"></i> JavaScript</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfolio</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="glass-card project-card">
+                        <div class="project-image-placeholder">
+                            <i class="fa-solid fa-book-bookmark project-visual-icon"></i>
+                            <div class="project-overlay-glow"></div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-type">Web Application</span>
+                            <h3 class="project-name">Book Store Management System</h3>
+                            <p class="project-desc">
+                                Developed a Spring Boot web application for managing books with CRUD functionality, MySQL database integration, and MVC architecture. Supports adding, editing, searching, and deleting book items with secure operations and clean user-interface representations.
+                            </p>
+                            <div class="project-tech-tags">
+                                <span>Java</span>
+                                <span>Spring Boot</span>
+                                <span>Spring MVC</span>
+                                <span>Hibernate</span>
+                                <span>MySQL</span>
+                                <span>Maven</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Vignesh-g-jv" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View Source Code on GitHub">
+                                    <i class="fa-brands fa-github"></i> GitHub <i class="fa-solid fa-arrow-up-right-from-square icon-small"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="glass-card project-card">
+                        <div class="project-image-placeholder">
+                            <i class="fa-solid fa-graduation-cap project-visual-icon"></i>
+                            <div class="project-overlay-glow"></div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-type">REST API Service</span>
+                            <h3 class="project-name">Course Registration System</h3>
+                            <p class="project-desc">
+                                Built a backend application where students can register for courses, view available classes, and manage profiles using REST APIs. Designed structured endpoints, handled request constraints, database persistence, and verified response endpoints.
+                            </p>
+                            <div class="project-tech-tags">
+                                <span>Java</span>
+                                <span>Spring Boot</span>
+                                <span>MySQL</span>
+                                <span>REST API</span>
+                                <span>JPA</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Vignesh-g-jv" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View Source Code on GitHub">
+                                    <i class="fa-brands fa-github"></i> GitHub <i class="fa-solid fa-arrow-up-right-from-square icon-small"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education" class="education-section section-padding">
+            <div class="container">
+                <div class="education-certifications-grid">
+                    <!-- Education Column -->
+                    <div class="timeline-column">
+                        <div class="section-header align-left">
+                            <span class="section-tag">Education</span>
+                            <h2 class="section-title">Academic Background</h2>
+                            <div class="section-line"></div>
+                        </div>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="glass-card timeline-card">
+                                    <span class="timeline-duration"><i class="fa-solid fa-calendar-days"></i> Graduated</span>
+                                    <h3 class="timeline-title">Bachelor of Engineering</h3>
+                                    <p class="timeline-org">Computer Science Engineering</p>
+                                    <p class="timeline-desc">Acquired core computer science knowledge focusing on Software Engineering, Database Systems, Operating Systems, OOP Design, and Algorithm Analysis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certifications Column -->
+                    <div class="timeline-column">
+                        <div class="section-header align-left">
+                            <span class="section-tag">Certifications</span>
+                            <h2 class="section-title">Professional Training</h2>
+                            <div class="section-line"></div>
+                        </div>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="glass-card timeline-card">
+                                    <span class="timeline-duration"><i class="fa-solid fa-certificate"></i> Certified</span>
+                                    <h3 class="timeline-title">Java Full Stack Development</h3>
+                                    <p class="timeline-org">Besant Technologies</p>
+                                    <p class="timeline-desc">Intensive training program centered around Java core concepts, advanced backend mechanisms (Spring Boot, Hibernate), database optimization, and modern web integrations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Contact</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="contact-grid">
+                    <!-- Contact Information -->
+                    <div class="contact-info-panel">
+                        <h3>Let's collaborate on backend projects!</h3>
+                        <p class="contact-sub">I'm currently looking for full-time Java Backend Developer positions. Drop a line if you have an opening, or just want to connect!</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="contact-detail-text">
+                                    <span>Email Me</span>
+                                    <a href="mailto:vignesh.dev.java@gmail.com">vickynrsvicky@gamil.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="contact-detail-text">
+                                    <span>Call Me</span>
+                                    <a href="tel:+919876543210">+91 7338875845</a>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                                <div class="contact-detail-text">
+                                    <span>LinkedIn Link</span>
+                                    <a href="https://linkedin.com/in/vignesh-java-developer" target="_blank" rel="noopener noreferrer">linkedin.com/in/vignesh-java-developer</a>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+                                <div class="contact-detail-text">
+                                    <span>GitHub Profile</span>
+                                    <a href="https://github.com/vignesh" target="_blank" rel="noopener noreferrer">github.com/vignesh</a>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="contact-detail-text">
+                                    <span>Current Location</span>
+                                    <p>Chennai, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="glass-card contact-form-card">
+                        <form id="contact-form" action="#" class="contact-form">
+                            <div class="form-group">
+                                <label for="form-name">Full Name</label>
+                                <input type="text" id="form-name" placeholder="John Doe" required>
+                                <span class="error-msg" id="name-error">Please fill in your name.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email Address</label>
+                                <input type="email" id="form-email" placeholder="john@example.com" required>
+                                <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-subject">Subject</label>
+                                <input type="text" id="form-subject" placeholder="Project Inquiry" required>
+                                <span class="error-msg" id="subject-error">Please enter a subject.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" rows="5" placeholder="Write your message here..." required></textarea>
+                                <span class="error-msg" id="message-error">Please write a message.</span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-spinner" id="form-spinner"></span>
+                                <i class="fa-solid fa-paper-plane send-icon"></i>
+                            </button>
+                            
+                            <div class="form-status" id="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top-btn" class="scroll-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="copyright">&copy; 2026. All rights reserved.</p>
+            <p class="credits">Designed & Developed by <span class="text-gradient">Vignesh</span></p>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
