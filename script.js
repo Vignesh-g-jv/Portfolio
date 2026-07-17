@@ -257,72 +257,103 @@ document.addEventListener("DOMContentLoaded", () => {
     // Regular Expression for Email Validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        
-        let hasErrors = false;
+   contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-        // Reset previous validation errors
-        resetFormValidation();
+    let hasErrors = false;
+    resetFormValidation();
 
-        // Validate Name
-        if (!nameInput.value.trim()) {
-            showInputError(nameInput, "name-error");
-            hasErrors = true;
-        }
-
-        // Validate Email
-        if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
-            showInputError(emailInput, "email-error");
-            hasErrors = true;
-        }
-
-        // Validate Subject
-        if (!subjectInput.value.trim()) {
-            showInputError(subjectInput, "subject-error");
-            hasErrors = true;
-        }
-
-        // Validate Message
-        if (!messageInput.value.trim()) {
-            showInputError(messageInput, "message-error");
-            hasErrors = true;
-        }
-
-        // If validation errors are present, block submission
-        if (hasErrors) return;
-
-        // Visual feedback - Form loading state
-        submitBtn.disabled = true;
-        formSpinner.style.display = "inline-block";
-        const paperPlaneIcon = submitBtn.querySelector(".send-icon");
-        if (paperPlaneIcon) paperPlaneIcon.style.display = "none";
-        
-        // Simulating backend request latency
-        setTimeout(() => {
-            // Success response
-            formSpinner.style.display = "none";
-            if (paperPlaneIcon) paperPlaneIcon.style.display = "inline-block";
-            
-            formStatus.className = "form-status success";
-            formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you, Vignesh! Your message has been sent successfully. I will get back to you soon.';
-            
-            // Clear fields
-            contactForm.reset();
-            submitBtn.disabled = false;
-            
-            // Auto hide status after 5 seconds
-            setTimeout(() => {
-                formStatus.style.display = "none";
-            }, 6000);
-            
-        }, 1500);
-    });
-
-    function showInputError(inputEl, errorId) {
-        inputEl.parentElement.classList.add("has-error");
+    // Validate Name
+    if (!nameInput.value.trim()) {
+        showInputError(nameInput);
+        hasErrors = true;
     }
 
+    // Validate Email
+    if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+        showInputError(emailInput);
+        hasErrors = true;
+    }
+
+    // Validate Subject
+    if (!subjectInput.value.trim()) {
+        showInputError(subjectInput);
+        hasErrors = true;
+    }
+
+    // Validate Message
+    if (!messageInput.value.trim()) {
+        showInputError(messageInput);
+        hasErrors = true;
+    }
+
+    if (hasErrors) return;
+
+    submitBtn.disabled = true;
+    formSpinner.style.display = "inline-block";
+
+    const paperPlaneIcon = submitBtn.querySelector(".send-icon");
+    if (paperPlaneIcon) paperPlaneIcon.style.display = "none";
+
+    const contactData = {
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        subject: subjectInput.value.trim(),
+        message: messageInput.value.trim()
+    };
+
+    try {
+
+        const response = await fetch("http://localhost:8080/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(contactData)
+        });
+
+        if (response.ok) {
+
+            formStatus.style.display = "block";
+            formStatus.className = "form-status success";
+            formStatus.innerHTML =
+                '<i class="fa-solid fa-circle-check"></i> Message sent successfully!';
+
+            contactForm.reset();
+
+        } else {
+
+            formStatus.style.display = "block";
+            formStatus.className = "form-status error";
+            formStatus.innerHTML =
+                '<i class="fa-solid fa-circle-xmark"></i> Failed to send message.';
+
+        }
+
+    } catch (error) {
+
+        formStatus.style.display = "block";
+        formStatus.className = "form-status error";
+        formStatus.innerHTML =
+            '<i class="fa-solid fa-circle-xmark"></i> Server not running.';
+
+        console.error(error);
+
+    } finally {
+
+        submitBtn.disabled = false;
+        formSpinner.style.display = "none";
+
+        if (paperPlaneIcon) {
+            paperPlaneIcon.style.display = "inline-block";
+        }
+
+    }
+});
+
+   function showInputError(inputEl) {
+    inputEl.parentElement.classList.add("has-error");
+}
     function resetFormValidation() {
         const formGroups = document.querySelectorAll(".form-group");
         formGroups.forEach(group => group.classList.remove("has-error"));
